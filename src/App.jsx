@@ -1,9 +1,9 @@
-import { Hero } from "./components";
+import { Home } from "./page";
 
 function App() {
   return (
     <main>
-      <Hero />
+      <Home />
     </main>
   );
 }
