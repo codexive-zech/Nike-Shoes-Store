@@ -88,7 +88,7 @@ const highlight = {
   img: hightlightImg,
 };
 
-const sneaker = {
+const featured = {
   heading: "FEATURED",
   title: "NIKE SNEAKERS AIR LANCING SHOES",
   text: "The radiance lives on Nike Sneakers Air Lancing Shoes, the basket ball OG that puts a fresh spin on what you know best: durably stitched overlays, clean finishes and the perfect amount of flash to make you shine.",
@@ -369,7 +369,7 @@ export {
   heroApi,
   footerAPI,
   story,
-  sneaker,
+  featured,
   highlight,
   topRatedSales,
   popularSales,

@@ -5,4 +5,14 @@ import HeroImage from "./HeroImage.jsx";
 import Sales from "./Sales.jsx";
 import Title from "./Title.jsx";
 import Item from "./Item.jsx";
-export { Hero, SocialLinks, ClipPath, HeroImage, Sales, Title, Item };
+import SmallHero from "./SmallHero.jsx";
+export {
+  Hero,
+  SocialLinks,
+  ClipPath,
+  HeroImage,
+  Sales,
+  Title,
+  Item,
+  SmallHero,
+};
