@@ -1,8 +1,11 @@
 import React from "react";
 import { FaShoppingBag, FaStar } from "react-icons/fa";
+import { useDispatch } from "react-redux";
 import { formatPrice } from "../utils/helper.js";
+import { addToCart } from "../features/CartSlice.js";
 
 const Item = ({
+  id,
   title,
   text,
   color,
@@ -13,6 +16,12 @@ const Item = ({
   img,
   isPopularSale,
 }) => {
+  const dispatch = useDispatch();
+
+  const addProduct = () => {
+    const payloadItems = { id, title, text, color, shadow, img, price };
+    dispatch(addToCart(payloadItems));
+  };
   return (
     // item container
     <div
@@ -45,7 +54,8 @@ const Item = ({
       <div className=" flex items-center justify-center gap-5 py-2">
         <button
           type="button"
-          className="bg-slate-200 button-theme p-1 blur-effect-theme "
+          className="bg-slate-200 button-theme p-1 blur-effect-theme"
+          onClick={addProduct}
         >
           <FaShoppingBag className="style-icon text-slate-900 w-5 h-5" />
         </button>

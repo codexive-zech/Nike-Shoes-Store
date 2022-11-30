@@ -1,8 +1,11 @@
 import React from "react";
 import emptyBag from "../assets/images/emptybag.png";
 import { FaArrowLeft } from "react-icons/fa";
+import { useDispatch } from "react-redux";
+import { closeCart } from "../features/CartSlice";
 
 const CartEmpty = () => {
+  const dispatch = useDispatch();
   return (
     <div className=" flex items-center justify-center flex-col py-16 md:py-20 gap-12">
       <div>
@@ -16,6 +19,7 @@ const CartEmpty = () => {
         <button
           type="button"
           className="  flex items-center justify-center gap-3"
+          onClick={() => dispatch(closeCart())}
         >
           <FaArrowLeft className="icon-style w-7 h-7 text-slate-900" />
           <a href="/">Back To Store</a>
