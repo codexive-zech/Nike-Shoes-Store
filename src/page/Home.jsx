@@ -1,5 +1,5 @@
 import React from "react";
-import { Hero, Sales, SmallHero } from "../components";
+import { Cart, Footer, Hero, Navbar, Sales, SmallHero } from "../components";
 import {
   popularSales,
   topRatedSales,
@@ -9,13 +9,18 @@ import {
 
 const Home = () => {
   return (
-    <main className=" flex flex-col gap-14 relative">
-      <Hero />
-      <Sales endPoint={popularSales} isPopularSale />
-      <SmallHero endPoint={highlight} isHighlight />
-      <Sales endPoint={topRatedSales} />
-      <SmallHero endPoint={featured} />
-    </main>
+    <>
+      <Navbar />
+      <Cart />
+      <main className=" flex flex-col gap-14 relative">
+        <Hero />
+        <Sales endPoint={popularSales} isPopularSale />
+        <SmallHero endPoint={highlight} isHighlight />
+        <Sales endPoint={topRatedSales} />
+        <SmallHero endPoint={featured} />
+      </main>
+      <Footer />
+    </>
   );
 };
 
