@@ -12,6 +12,9 @@ import Cart from "./Cart.jsx";
 import CartHeader from "./CartHeader.jsx";
 import CartEmpty from "./CartEmpty.jsx";
 import CartItem from "./CartItem.jsx";
+import Subtotal from "./Subtotal.jsx";
+import SortForm from "./SortForm.jsx";
+import Checkout from "./Checkout.jsx";
 export {
   Hero,
   SocialLinks,
@@ -27,4 +30,7 @@ export {
   CartEmpty,
   CartHeader,
   CartItem,
+  Subtotal,
+  SortForm,
+  Checkout,
 };

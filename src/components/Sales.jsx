@@ -1,11 +1,14 @@
 import React from "react";
-import { Title, Item } from "../components";
+import { Title, Item, SortForm } from "../components";
 
 const Sales = ({ endPoint, isPopularSale }) => {
   const { title, items } = endPoint;
   return (
     <div className="nike-container mt-5 lg:mt-10">
-      <Title title={title} />
+      <div className=" flex items-center justify-between">
+        <Title title={title} />
+        {/* <SortForm /> */}
+      </div>
       <div
         className={`grid items-center ${
           isPopularSale

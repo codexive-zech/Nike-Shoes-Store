@@ -2,7 +2,7 @@ import React from "react";
 import { FaShoppingBag, FaStar } from "react-icons/fa";
 import { useDispatch } from "react-redux";
 import { formatPrice } from "../utils/helper.js";
-import { addToCart } from "../features/CartSlice.js";
+import { addToCart, openCart } from "../features/CartSlice.js";
 
 const Item = ({
   id,
@@ -22,6 +22,11 @@ const Item = ({
     const payloadItems = { id, title, text, color, shadow, img, price };
     dispatch(addToCart(payloadItems));
   };
+
+  const openingCart = () => {
+    dispatch(openCart());
+  };
+
   return (
     // item container
     <div
@@ -62,6 +67,10 @@ const Item = ({
         <button
           type="button"
           className="bg-slate-200 button-theme p-1 blur-effect-theme text-slate-900"
+          onClick={() => {
+            addProduct();
+            openingCart();
+          }}
         >
           {btn}
         </button>

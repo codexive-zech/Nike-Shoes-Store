@@ -1,13 +1,17 @@
 import React, { useEffect } from "react";
 import logo from "../assets/images/logo.png";
 import { FaSearch, FaShoppingBag, FaHeart } from "react-icons/fa";
-import { openCart } from "../features/CartSlice";
+import { getSubtotalPriceQuantity, openCart } from "../features/CartSlice";
 import { useDispatch, useSelector } from "react-redux";
 import { navScrollGreat, navScrollLess } from "../features/NavbarSlice";
 
 const Navbar = () => {
   const { navScroll } = useSelector((store) => store.navbar);
+  const { cartTotalQuantity, cartItems } = useSelector((store) => store.cart);
   const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(getSubtotalPriceQuantity());
+  }, [cartItems, dispatch]);
 
   const setFixedNav = () => {
     if (window.scrollY > 35) {
@@ -72,7 +76,7 @@ const Navbar = () => {
                     : "bg-slate-900 text-slate-100 shadow-slate-900"
                 }`}
               >
-                0
+                {cartTotalQuantity}
               </span>
             </li>
           </button>
