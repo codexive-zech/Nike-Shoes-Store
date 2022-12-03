@@ -2,8 +2,8 @@ import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import {
   getSubtotalPriceQuantity,
-  openCart,
   openCheckout,
+  closeCart,
 } from "../features/CartSlice";
 import { formatPrice } from "../utils/helper";
 
@@ -33,7 +33,10 @@ const Subtotal = () => {
         <button
           type="button"
           className=" button-theme bg-theme-cart text-slate-100 p-[0.35rem] w-full mb-1 sm:mb-0 uppercase transitions-theme "
-          onClick={() => dispatch(openCheckout())}
+          onClick={() => {
+            dispatch(openCheckout());
+            dispatch(closeCart());
+          }}
         >
           Checkout
         </button>

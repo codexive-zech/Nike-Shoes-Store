@@ -14,9 +14,15 @@ const checkoutSlice = createSlice({
     handleChange: (state, { payload: { name, value } }) => {
       state[name] = value;
     },
+    defaultValue: (state) => {
+      state.name = "";
+      state.email = "";
+      state.phone = "";
+      state.address = "";
+    },
   },
 });
 
-export const { handleChange } = checkoutSlice.actions;
+export const { handleChange, defaultValue } = checkoutSlice.actions;
 
 export default checkoutSlice.reducer;

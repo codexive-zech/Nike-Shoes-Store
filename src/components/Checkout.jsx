@@ -1,11 +1,15 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { FaTimes } from "react-icons/fa";
-import { closeCheckout } from "../features/CartSlice";
-import { handleChange } from "../features/checkoutSlice";
+import { closeCheckout, checkoutQuantity } from "../features/CartSlice";
+import { handleChange, defaultValue } from "../features/checkoutSlice";
+import PaystackPop from "@paystack/inline-js";
+import { toast } from "react-hot-toast";
 
 const Checkout = () => {
-  const { toggleCheckout } = useSelector((store) => store.cart);
+  const { toggleCheckout, cartTotalAmount } = useSelector(
+    (store) => store.cart
+  );
   const { name, email, phone, address } = useSelector(
     (store) => store.checkout
   );
@@ -15,6 +19,31 @@ const Checkout = () => {
     const name = e.target.name;
     const value = e.target.value;
     dispatch(handleChange({ name, value }));
+  };
+
+  const handlePayment = (e) => {
+    // e.preventDefault();
+    const paystack = new PaystackPop(); // create a new instance for paystack popup UI
+    paystack.newTransaction({
+      key: "pk_test_bbf8a22d3fbb78b217cd7f8ace2d4bb455feed57",
+      name,
+      amount: cartTotalAmount,
+      email,
+      phone,
+      address,
+      onSuccess(transaction) {
+        const message = `Payment Complete!. Reference is ${transaction.reference}`;
+        toast.success(message);
+      },
+      onCancel() {
+        toast.error("You Have Cancel The Transaction");
+      },
+    });
+    console.log("Paystack");
+  };
+
+  const closeCheckoutForm = () => {
+    dispatch(closeCheckout());
   };
 
   return (
@@ -33,10 +62,7 @@ const Checkout = () => {
             type="button"
             className="p-1 rounded-md bg-theme-cart hover:scale-105 transitions-theme "
           >
-            <FaTimes
-              className="icon-style"
-              onClick={() => dispatch(closeCheckout())}
-            />
+            <FaTimes className="icon-style" onClick={closeCheckoutForm} />
           </button>
         </div>
         <form className="grid items-center gap-6 py-4 sm:py-10">
@@ -99,7 +125,17 @@ const Checkout = () => {
             />
           </div>
           <div className="absolute bottom-0 right-0 button-theme bg-theme-cart text-slate-100 p-[0.35rem] w-full transitions-theme flex items-center justify-center mb-1">
-            <button type="button" className="uppercase font-bold">
+            <button
+              type="button"
+              className="uppercase font-bold"
+              onClick={() => {
+                handlePayment();
+                closeCheckoutForm();
+                dispatch(defaultValue());
+                dispatch(checkoutQuantity());
+              }}
+              // onClick={handlePayment}
+            >
               Make Payment
             </button>
           </div>

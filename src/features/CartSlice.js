@@ -95,6 +95,10 @@ const cartSlice = createSlice({
     closeCheckout: (state) => {
       state.toggleCheckout = false;
     },
+    checkoutQuantity: (state) => {
+      state.cartTotalQuantity = 0;
+      state.cartItems = [];
+    },
   },
 });
 
@@ -110,6 +114,7 @@ export const {
   updateSort,
   openCheckout,
   closeCheckout,
+  checkoutQuantity,
 } = cartSlice.actions;
 
 export default cartSlice.reducer;
