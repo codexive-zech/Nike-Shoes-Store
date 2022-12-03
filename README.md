@@ -32,3 +32,4 @@ npm run dev or yarn dev
 # Store Looks - Paystack Payment UI 
 ![Nike Dropshipping Store - Google Chrome 03-Dec-22 23_37_21](https://user-images.githubusercontent.com/56152847/205465993-2dbc1757-cfe1-4707-a0f7-2765060b0c56.png)
 
+## HNG Intership Program Motivated me to do more even when i didn't mmake it to the next stage of the program
