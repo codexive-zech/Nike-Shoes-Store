@@ -20,11 +20,14 @@ npm run dev or yarn dev
 
 ![Nike Dropshipping Store - Google Chrome 03-Dec-22 23_33_49](https://user-images.githubusercontent.com/56152847/205465977-02d75e66-1466-498c-a1b6-255f68b026a5.png)
 
+
 # Store Looks - Cart Section
 ![Nike Dropshipping Store - Google Chrome 03-Dec-22 23_34_35](https://user-images.githubusercontent.com/56152847/205465812-a478f39d-f3c5-48f1-8316-0bfb167850c2.png)
 
+
 # Store Looks - Checkout Section
 ![Nike Dropshipping Store - Google Chrome 03-Dec-22 23_34_51](https://user-images.githubusercontent.com/56152847/205465814-7ea46e66-da67-442a-8c4e-a1b1b6476a2a.png)
+
 
 # Store Looks - Paystack Payment UI 
 ![Nike Dropshipping Store - Google Chrome 03-Dec-22 23_37_21](https://user-images.githubusercontent.com/56152847/205465993-2dbc1757-cfe1-4707-a0f7-2765060b0c56.png)
