@@ -1,5 +1,5 @@
 import React from "react";
-import { Title, Item, SortForm } from "../components";
+import { Title, Item } from "../components";
 
 const Sales = ({ endPoint, isPopularSale }) => {
   const { title, items } = endPoint;
@@ -7,7 +7,6 @@ const Sales = ({ endPoint, isPopularSale }) => {
     <div className="nike-container mt-5 lg:mt-10">
       <div className=" flex items-center justify-between">
         <Title title={title} />
-        {/* <SortForm /> */}
       </div>
       <div
         className={`grid items-center ${

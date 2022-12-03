@@ -5,6 +5,7 @@ const initialState = {
   email: "",
   phone: "",
   address: "",
+  myUser: null,
 };
 
 const checkoutSlice = createSlice({

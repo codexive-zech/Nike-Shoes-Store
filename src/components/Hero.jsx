@@ -9,7 +9,7 @@ const Hero = () => {
       <ClipPath />
       <div className="relative grid items-center justify-items-center nike-container opacity-100 z-20 ">
         <div className=" grid items-center justify-items-center mt-28 md:mt-24">
-          <h1 className=" text-6xl lg:text-5xl md:text-4xl sm:text-3xl xs:text-2xl drop-shadow-sm filter font-extrabold text-slate-100">
+          <h1 className=" text-6xl lg:text-5xl md:text-4xl sm:text-3xl xs:text-2xl drop-shadow-sm filter font-extrabold text-slate-100 mb-2 sm:mb-0">
             {title}
           </h1>
           <h1 className="text-6xl lg:text-5xl md:text-4xl sm:text-3xl xs:text-2xl drop-shadow-sm filter font-extrabold text-slate-100">

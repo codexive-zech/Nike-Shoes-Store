@@ -1,6 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { toast } from "react-hot-toast";
-import { topRatedSales } from "../utils/data";
 import { setShoesInStorage, getShoesFromStorage } from "../utils/helper";
 
 const initialState = {

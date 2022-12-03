@@ -13,7 +13,6 @@ import CartHeader from "./CartHeader.jsx";
 import CartEmpty from "./CartEmpty.jsx";
 import CartItem from "./CartItem.jsx";
 import Subtotal from "./Subtotal.jsx";
-import SortForm from "./SortForm.jsx";
 import Checkout from "./Checkout.jsx";
 export {
   Hero,
@@ -31,6 +30,5 @@ export {
   CartHeader,
   CartItem,
   Subtotal,
-  SortForm,
   Checkout,
 };
