@@ -1,16 +1,12 @@
 # Nike-Shoes-Store
 A Dropshipping web app for shopping of Nike Sneakers.
 
-#Getting Started
+# Getting Started
 
 First Run The Development Server
 
-npm install
-# or
-yarn instll
+npm install or yarn instll
 
-# and Now:
+and Now:
 
-npm run dev
-# or
-yarn dev
+npm run dev or yarn dev
