@@ -28,7 +28,7 @@ import messenger from "../assets/images/messenger.svg";
 
 const heroApi = {
   title: "Play With Electric Nike",
-  subtitle: "Vibe To Sneakers",
+  subtitle: "Vibe With Sneakers",
   img: heroImg,
   btnText: "Explore Product",
   socialLinks: [
