@@ -98,6 +98,10 @@ const cartSlice = createSlice({
       state.cartTotalQuantity = 0;
       state.cartItems = [];
     },
+    emptyDetails: (state) => {
+      toast.error("Payment Info Must Not be Empty");
+      state.cartItems = state.cartItems;
+    },
   },
 });
 
@@ -114,6 +118,7 @@ export const {
   openCheckout,
   closeCheckout,
   checkoutQuantity,
+  emptyDetails,
 } = cartSlice.actions;
 
 export default cartSlice.reducer;

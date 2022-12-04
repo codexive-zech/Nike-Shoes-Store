@@ -1,7 +1,11 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { FaTimes } from "react-icons/fa";
-import { closeCheckout, checkoutQuantity } from "../features/CartSlice";
+import {
+  closeCheckout,
+  checkoutQuantity,
+  emptyDetails,
+} from "../features/CartSlice";
 import { handleChange, defaultValue } from "../features/checkoutSlice";
 import PaystackPop from "@paystack/inline-js";
 import { toast } from "react-hot-toast";
@@ -21,25 +25,27 @@ const Checkout = () => {
     dispatch(handleChange({ name, value }));
   };
 
-  const handlePayment = (e) => {
-    // e.preventDefault();
-    const paystack = new PaystackPop(); // create a new instance for paystack popup UI
-    paystack.newTransaction({
-      key: "pk_test_bbf8a22d3fbb78b217cd7f8ace2d4bb455feed57",
-      name,
-      amount: cartTotalAmount,
-      email,
-      phone,
-      address,
-      onSuccess(transaction) {
-        const message = `Payment Complete!. Reference is ${transaction.reference}`;
-        toast.success(message);
-      },
-      onCancel() {
-        toast.error("You Have Cancel The Transaction");
-      },
-    });
-    console.log("Paystack");
+  const handlePayment = () => {
+    if (name || email || phone || address) {
+      const paystack = new PaystackPop(); // create a new instance for paystack popup UI
+      paystack.newTransaction({
+        key: "pk_test_bbf8a22d3fbb78b217cd7f8ace2d4bb455feed57",
+        name,
+        amount: cartTotalAmount,
+        email,
+        phone,
+        address,
+        onSuccess(transaction) {
+          const message = `Payment Complete!. Reference is ${transaction.reference}`;
+          toast.success(message);
+        },
+        onCancel() {
+          toast.error("You Have Cancel The Transaction");
+        },
+      });
+    } else {
+      dispatch(emptyDetails());
+    }
   };
 
   const closeCheckoutForm = () => {
