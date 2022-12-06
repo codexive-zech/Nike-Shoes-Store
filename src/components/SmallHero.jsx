@@ -9,7 +9,7 @@ const SmallHero = ({ endPoint, isHighlight }) => {
       }`}
     >
       {/* Text */}
-      <div className=" flex flex-col md:text-center max-w-xl lg:max-w-none w-full">
+      <div className=" flex flex-col md:text-center max-w-xl lg:max-w-none w-full py-3">
         <h1 className="text-4xl md:text-3xl text-gradient font-bold mb-1">
           {heading}
         </h1>
@@ -24,7 +24,7 @@ const SmallHero = ({ endPoint, isHighlight }) => {
         >
           <button
             type="button"
-            className="button-theme  text-slate-100 bg-slate-900 py-1 "
+            className="button-theme text-slate-100 bg-slate-900 py-1 "
           >
             {btn}
           </button>
@@ -34,7 +34,7 @@ const SmallHero = ({ endPoint, isHighlight }) => {
       <div className=" flex items-center justify-center">
         <img
           src={img}
-          alt=""
+          alt={title}
           className="w-full object-fill h-60 lg:h-54 md:h-48 sm:h-36 rotate-12 hover:-rotate-12 transition-all duration-300 ease-in-out md:mt-4 transitions-theme"
         />
       </div>

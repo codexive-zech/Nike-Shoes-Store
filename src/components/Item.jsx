@@ -59,7 +59,7 @@ const Item = ({
       <div className=" flex items-center justify-center gap-5 py-2">
         <button
           type="button"
-          className="bg-slate-200 button-theme p-1 blur-effect-theme"
+          className="bg-slate-200 button-theme p-1 blur-effect-theme sm:mr-2"
           onClick={addProduct}
         >
           <FaShoppingBag className="style-icon text-slate-900 w-5 h-5" />
