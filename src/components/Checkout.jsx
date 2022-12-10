@@ -119,7 +119,7 @@ const Checkout = () => {
               htmlFor="address"
               className="text-3xl md:text-2xl font-bold text-slate-800 mt-7"
             >
-              House Address
+              Billing Address
             </label>
             <input
               type="text"
@@ -140,7 +140,6 @@ const Checkout = () => {
                 dispatch(defaultValue());
                 dispatch(checkoutQuantity());
               }}
-              // onClick={handlePayment}
             >
               Make Payment
             </button>

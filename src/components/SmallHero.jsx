@@ -10,10 +10,10 @@ const SmallHero = ({ endPoint, isHighlight }) => {
     >
       {/* Text */}
       <div className=" flex flex-col md:text-center max-w-xl lg:max-w-none w-full py-3">
-        <h1 className="text-4xl md:text-3xl text-gradient font-bold mb-1">
+        <h1 className="text-4xl lg:text-3xl md:text-2xl text-gradient font-bold mb-1">
           {heading}
         </h1>
-        <h1 className="text-4xl md:text-3xl sm:text-2xl filter drop-shadow-md text-slate-900 font-bold">
+        <h1 className="text-4xl lg:text-3xl md:text-2xl filter drop-shadow-md text-slate-900 font-bold">
           {title}
         </h1>
         <p className=" text-slate-800 text-md my-2">{text}</p>
@@ -35,7 +35,7 @@ const SmallHero = ({ endPoint, isHighlight }) => {
         <img
           src={img}
           alt={title}
-          className="w-full object-fill h-60 lg:h-54 md:h-48 sm:h-36 rotate-12 hover:-rotate-12 transition-all duration-300 ease-in-out md:mt-4 transitions-theme"
+          className="w-full object-fill h-52 lg:h-32 lg:w-72 sm:h-36 rotate-12 hover:-rotate-12 transition-all duration-300 ease-in-out md:mt-4 transitions-theme lg:mx-4"
         />
       </div>
     </div>

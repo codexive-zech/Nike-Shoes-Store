@@ -27,6 +27,7 @@ const Navbar = () => {
       window.removeEventListener("scroll", setFixedNav);
     };
   }, [navScroll]);
+
   return (
     <header
       className={`${
@@ -43,15 +44,15 @@ const Navbar = () => {
           className={`w-20 h-auto ${navScroll ? "filter brightness-0" : null}`}
         />
         {/* list icon links */}
-        <ul className=" flex items-center justify-center gap-5 md:gap-3">
-          <li className=" grid items-center">
+        <ul className="flex items-center justify-center gap-5 md:gap-3">
+          <li className="grid items-center sm:mr-2">
             <FaSearch
               className={`icon-style ${
                 navScroll ? " text-slate-900" : " text-slate-100"
               }`}
             />
           </li>
-          <li className=" grid items-center">
+          <li className=" grid items-center sm:mr-2">
             <FaHeart
               className={`icon-style ${
                 navScroll ? " text-slate-900" : " text-slate-100"
@@ -60,7 +61,7 @@ const Navbar = () => {
           </li>
           <button
             type="button"
-            className=" relative border-none outline-none active:scale-110 transition-all duration-300 ease-in-out"
+            className=" relative border-none outline-none active:scale-110 transition-all duration-300 ease-in-out sm:mr-2"
             onClick={() => dispatch(openCart())}
           >
             <li className="grid items-center">
